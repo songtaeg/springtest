@@ -9,7 +9,16 @@ import com.example.test1.model.Test;
 
 @Mapper
 public interface TestMapper {
-	List<Test> testList(HashMap<String, Object> map);
+	//List(리스트 전체)
+	List<Test> testListall (HashMap<String, Object> map);
 	
+	Test testList (HashMap<String, Object> map);
+	// view(특정 항목) 
+
+	// delete update insert 
 	void deleteList(HashMap<String, Object> map);
+	
+	void updateList(HashMap<String, Object> map);
+	
+	void insertList(HashMap<String, Object> map);
 }

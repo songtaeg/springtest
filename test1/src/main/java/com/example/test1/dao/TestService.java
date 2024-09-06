@@ -6,4 +6,8 @@ public interface TestService {
 	HashMap<String, Object> searchList(HashMap<String, Object> map);
 	
 	HashMap<String, Object> deleteList(HashMap<String, Object> map);
+	
+	HashMap<String, Object> updateList(HashMap<String, Object> map);
+	
+	HashMap<String, Object> insertList(HashMap<String, Object> map);
 }
