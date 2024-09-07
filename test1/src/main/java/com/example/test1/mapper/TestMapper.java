@@ -21,4 +21,6 @@ public interface TestMapper {
 	void updateList(HashMap<String, Object> map);
 	
 	void insertList(HashMap<String, Object> map);
+	
+	List<Test> booklist(HashMap<String, Object> map);
 }

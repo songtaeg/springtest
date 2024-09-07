@@ -27,6 +27,12 @@ public class TestController {
         return "/test-list";
     }
 	
+	@RequestMapping("/book.do") 
+    public String book(Model model) throws Exception{
+
+        return "/book-list";
+    }
+	
 	@RequestMapping(value = "/test.dox", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
 	@ResponseBody
 	public String searchBbsList(Model model, @RequestParam HashMap<String, Object> map) throws Exception {
@@ -57,6 +63,15 @@ public class TestController {
 	public String insertList(Model model, @RequestParam HashMap<String, Object> map) throws Exception {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap=testService.insertList(map);
+		
+		return new Gson().toJson(resultMap);
+	}
+	
+	@RequestMapping(value = "/book.dox", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+	@ResponseBody
+	public String searchBook(Model model, @RequestParam HashMap<String, Object> map) throws Exception {
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		resultMap=testService.searchBookList(map);
 		
 		return new Gson().toJson(resultMap);
 	}

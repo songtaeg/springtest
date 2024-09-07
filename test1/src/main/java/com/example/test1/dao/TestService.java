@@ -10,4 +10,6 @@ public interface TestService {
 	HashMap<String, Object> updateList(HashMap<String, Object> map);
 	
 	HashMap<String, Object> insertList(HashMap<String, Object> map);
+	
+	HashMap<String, Object> searchBookList(HashMap<String, Object> map);
 }

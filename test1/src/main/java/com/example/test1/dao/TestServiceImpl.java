@@ -68,6 +68,19 @@ public class TestServiceImpl implements TestService{
 		return resultMap;
 	}
 
+	@Override
+	public HashMap<String, Object> searchBookList(HashMap<String, Object> map) {
+		// TODO Auto-generated method stub
+		HashMap<String, Object> resultMap=new HashMap<String, Object>();
+		
+		//System.out.println(map);
+		
+		List<Test> list = testMapper.booklist(map);
+		resultMap.put("list", list);
+		
+		return resultMap;
+	}
+
 
 
 }

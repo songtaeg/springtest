@@ -31,4 +31,9 @@
 		into test_product 
 		values (PRODUCT_SEQ.NEXTVAL,#{productName},#{productPrice})
 	</insert>
+	
+	<select id="booklist"  parameterType="hashmap" resultType="com.example.test1.model.Test">
+		select * 
+		from book
+	</select>
 </mapper>
