@@ -33,6 +33,18 @@ public class TestController {
         return "/book-list";
     }
 	
+	@RequestMapping("/calendar.do") 
+    public String calendar(Model model) throws Exception{
+
+        return "/calendar";
+    }
+	
+	@RequestMapping("/calendar2.do") 
+    public String calendar2(Model model) throws Exception{
+
+        return "/calendar2";
+    }
+	
 	@RequestMapping(value = "/test.dox", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
 	@ResponseBody
 	public String searchBbsList(Model model, @RequestParam HashMap<String, Object> map) throws Exception {
@@ -67,11 +79,31 @@ public class TestController {
 		return new Gson().toJson(resultMap);
 	}
 	
+	
+	
 	@RequestMapping(value = "/book.dox", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
 	@ResponseBody
 	public String searchBook(Model model, @RequestParam HashMap<String, Object> map) throws Exception {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap=testService.searchBookList(map);
+		
+		return new Gson().toJson(resultMap);
+	}
+	
+	@RequestMapping(value = "/delete-book.dox", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+	@ResponseBody
+	public String deleteBook(Model model, @RequestParam HashMap<String, Object> map) throws Exception {
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		resultMap=testService.deleteBookList(map);
+		
+		return new Gson().toJson(resultMap);
+	}
+	
+	@RequestMapping(value = "/update-book.dox", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+	@ResponseBody
+	public String updateBook(Model model, @RequestParam HashMap<String, Object> map) throws Exception {
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		resultMap=testService.updateBookList(map);
 		
 		return new Gson().toJson(resultMap);
 	}

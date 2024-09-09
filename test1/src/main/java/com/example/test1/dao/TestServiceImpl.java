@@ -81,6 +81,31 @@ public class TestServiceImpl implements TestService{
 		return resultMap;
 	}
 
+	@Override
+	public HashMap<String, Object> deleteBookList(HashMap<String, Object> map) {
+		// TODO Auto-generated method stub
+		HashMap<String, Object> resultMap=new HashMap<String, Object>();
+		
+		try {
+			testMapper.deletebook(map);
+			resultMap.put("message", "삭제 성공");
+		} catch (Exception e) {
+			// TODO: handle exception
+			resultMap.put("message", "삭제 실패");
+		}
+		return resultMap;
+	}
+
+	@Override
+	public HashMap<String, Object> updateBookList(HashMap<String, Object> map) {
+		// TODO Auto-generated method stub
+		HashMap<String, Object> resultMap=new HashMap<String, Object>();
+		testMapper.updatebook(map);
+		resultMap.put("message", "변경 성공");
+		
+		return resultMap;
+	}
+
 
 
 }

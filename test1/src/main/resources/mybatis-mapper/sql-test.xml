@@ -32,8 +32,20 @@
 		values (PRODUCT_SEQ.NEXTVAL,#{productName},#{productPrice})
 	</insert>
 	
-	<select id="booklist"  parameterType="hashmap" resultType="com.example.test1.model.Test">
+	<select id="booklist" parameterType="hashmap" resultType="com.example.test1.model.Test">
 		select * 
 		from book
 	</select>
+	
+	<delete id="deletebook" parameterType="hashmap">
+	 	delete
+	 	from book
+	 	where bookid=#{bookId}
+	</delete>
+	
+	<update id="updatebook" parameterType="hashmap">
+		update book
+		set price=#{price}
+		where bookid=#{bookId}
+	</update>
 </mapper>
