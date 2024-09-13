@@ -27,7 +27,7 @@
                 headerToolbar: {
                     left: 'prev,next today',
                     center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
                 },
                 views: {
                     dayGridMonth: {
@@ -39,6 +39,9 @@
                     timeGridDay: {
                         buttonText: 'Day'
                     },
+					listMonth:{
+						buttonText: 'List'
+					}
                 },
                 events: [], // 초기 이벤트 x
                 select: function(info) {
@@ -46,7 +49,7 @@
                     window.selectedInfo = info; // 선택된 정보를 전역 변수에 저장
                 },
                 eventClick: function(info) {
-                    window.currentEvent = info.event; // 클릭한 이벤트 저장
+                    currentEvent = info.event; // 클릭한 이벤트 저장
                 }
             });
 

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.test1.mapper.StudyMapper">
+	<select id="studyList" parameterType="hashmap" resultType="com.example.test1.model.Study">
+		select s.id,s.name,s.description,s.created_at 
+		from study s
+		join study_apply a on s.id=a.study_id
+		join study_user u on a.user_id=u.id
+		where u.username=#{userName}
+	</select>
+	
+</mapper>
